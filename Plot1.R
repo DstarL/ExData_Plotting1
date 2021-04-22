@@ -25,9 +25,10 @@ hpc$DateTime <- dmy_hms(hpc$DateTime)
 hpc$Global_active_power <- as.numeric(hpc$Global_active_power)
 
 # Plot 1
+png("Plot1.png", width = 480, height = 480)
+
 hist(hpc$Global_active_power, col="red",
      xlab="Global Active Power (kilowatts)",
      main="Global Active Power")
 
-dev.copy(png, file="Plot1.png")
 dev.off()

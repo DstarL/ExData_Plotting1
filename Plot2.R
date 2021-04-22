@@ -25,6 +25,8 @@ hpc$DateTime <- dmy_hms(hpc$DateTime)
 hpc$Global_active_power <- as.numeric(hpc$Global_active_power)
 
 # Plot 2
+png("Plot2.png", width = 480, height = 480)
+
 with(hpc, plot(DateTime,
                Global_active_power,
                xlab="",
@@ -33,5 +35,4 @@ with(hpc, plot(DateTime,
 
 lines(hpc$DateTime, hpc$Global_active_power, pch=16)
 
-dev.copy(png, file="Plot2.png")
 dev.off()

@@ -27,6 +27,8 @@ hpc$Sub_metering_1 <- as.numeric(hpc$Sub_metering_1)
 hpc$Sub_metering_2 <- as.numeric(hpc$Sub_metering_2)
 hpc$Sub_metering_3 <- as.numeric(hpc$Sub_metering_3)
 
+png("Plot3.png", width = 480, height = 480)
+
 with(hpc, plot(DateTime,
                Sub_metering_1,
                xlab="",
@@ -41,7 +43,6 @@ legend("topright", col=c("black","red","blue"),
        lty=1,
        legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
-dev.copy(png, file="Plot3.png")
 dev.off()
 
 

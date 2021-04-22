@@ -22,13 +22,14 @@ hpc$DateTime <- paste(hpc$Date, hpc$Time, sep=" ")
 
 hpc$DateTime <- dmy_hms(hpc$DateTime)
 
-# Plot 4
 hpc$Global_active_power <- as.numeric(hpc$Global_active_power)
 hpc$Global_reactive_power <- as.numeric(hpc$Global_reactive_power)
 hpc$Voltage <- as.numeric(hpc$Voltage)
 hpc$Sub_metering_1 <- as.numeric(hpc$Sub_metering_1)
 hpc$Sub_metering_2 <- as.numeric(hpc$Sub_metering_2)
 hpc$Sub_metering_3 <- as.numeric(hpc$Sub_metering_3)
+
+png("Plot4.png", width = 480, height = 480)
 
 par(mfrow=c(2,2),mar=c(4,4,2,1),oma=c(0,0,2,0))
 # top left
@@ -70,6 +71,4 @@ with(hpc, plot(DateTime,
                pch="."))
 lines(hpc$DateTime, hpc$Global_reactive_power, pch=16)
 
-
-dev.copy(png, file="Plot4.png")
 dev.off()
